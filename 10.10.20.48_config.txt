@@ -1,8 +1,8 @@
 Building configuration...
 
-Current configuration : 4206 bytes
+Current configuration : 4333 bytes
 !
-! Last configuration change at 16:25:05 UTC Mon Feb 22 2021 by cisco
+! Last configuration change at 15:23:18 UTC Wed Feb 24 2021 by developer
 !
 version 16.9
 service timestamps debug datetime msec
@@ -16,6 +16,8 @@ hostname csr1000v-1
 boot-start-marker
 boot-end-marker
 !
+!
+vrf definition local_vrfs
 !
 no logging console
 enable secret 5 $1$20ue$uC.uSGo6nvfWs63EjjzRP.
@@ -96,7 +98,7 @@ crypto pki certificate chain TP-self-signed-65385644
 !
 !
 !
-license udi pid CSR1000V sn 9P5EKA7UQ0K
+license udi pid CSR1000V sn 9RTMG5C7KLZ
 license boot level ax
 no license smart enable
 diagnostic bootup level minimal
@@ -134,6 +136,10 @@ redundancy
 ! 
 ! 
 !
+!
+interface Loopback100
+ description Pod Number 14100
+ ip address 10.111.100.1 255.255.255.255
 !
 interface GigabitEthernet1
  description MANAGEMENT INTERFACE - DON'T TOUCH ME
